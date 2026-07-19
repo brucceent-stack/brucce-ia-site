@@ -25,9 +25,11 @@ formulario.addEventListener("submit", function(evento){
 
     const nome = document.getElementById("nome").value;
 
+localStorage.setItem("cliente", nome);
 
-    alert(
-        "Obrigado " + nome + "! Recebemos o seu pedido."
-    );
+
+alert(
+"Obrigado " + nome + "! Seu pedido foi registrado."
+);
 
 });
