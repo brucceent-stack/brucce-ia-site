@@ -1,6 +1,7 @@
 const botoes = document.querySelectorAll(".botaoContato");
 
-console.log(botoes);
+const mensagem = document.getElementById("mensagem");
+
 
 botoes.forEach(function(botao) {
 
@@ -8,7 +9,8 @@ botoes.forEach(function(botao) {
 
         evento.preventDefault();
 
-        alert("Obrigado pelo interesse! Em breve entraremos em contacto.");
+        mensagem.textContent = 
+        "Obrigado pelo contacto! A Brucce IA está pronta para ajudar o seu negócio.";
 
     });
 
