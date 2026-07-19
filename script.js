@@ -33,3 +33,22 @@ alert(
 );
 
 });
+const botaoAnalisar = document.getElementById("analisar");
+
+const resposta = document.getElementById("resposta");
+
+botaoAnalisar.addEventListener("click", function () {
+
+    const problema = document.getElementById("problema").value;
+
+    if (problema.trim() === "") {
+
+        resposta.textContent = "Descreva primeiro o problema.";
+
+        return;
+    }
+
+    resposta.textContent =
+        "Analisando... (na próxima aula essa resposta virá de uma IA).";
+
+});
