@@ -1,9 +1,13 @@
-const botao = document.getElementById("botaoContato");
+const botoes = document.querySelectorAll(".botaoContato");
 
-botao.addEventListener("click", function(evento) {
+botoes.forEach(function(botao) {
 
-    evento.preventDefault();
+    botao.addEventListener("click", function(evento) {
 
-    alert("Obrigado pelo interesse! Em breve este botão abrirá nosso contato.");
+        evento.preventDefault();
+
+        alert("Obrigado pelo interesse! Em breve entraremos em contacto.");
+
+    });
 
 });
