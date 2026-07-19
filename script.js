@@ -15,3 +15,19 @@ botoes.forEach(function(botao) {
     });
 
 });
+const formulario = document.getElementById("formulario");
+
+
+formulario.addEventListener("submit", function(evento){
+
+    evento.preventDefault();
+
+
+    const nome = document.getElementById("nome").value;
+
+
+    alert(
+        "Obrigado " + nome + "! Recebemos o seu pedido."
+    );
+
+});
