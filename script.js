@@ -1,5 +1,7 @@
 const botoes = document.querySelectorAll(".botaoContato");
 
+console.log(botoes);
+
 botoes.forEach(function(botao) {
 
     botao.addEventListener("click", function(evento) {
