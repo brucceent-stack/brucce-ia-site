@@ -49,6 +49,9 @@ botaoAnalisar.addEventListener("click", function () {
     }
 
     resposta.textContent =
-        "Analisando... (na próxima aula essa resposta virá de uma IA).";
+"Análise concluída:\n\n" +
+"1. Melhorar presença digital.\n" +
+"2. Criar automações para economizar tempo.\n" +
+"3. Usar estratégias de marketing para atrair clientes.";
 
 });
