@@ -20,15 +20,36 @@ app.post("/analise", function(req, res){
     const problema = req.body.problema;
 
 
+    const respostaIA = 
+    `
+Análise da Brucce IA:
+
+Problema identificado:
+${problema}
+
+
+Sugestões:
+
+1. Melhorar a presença digital do negócio.
+
+2. Criar estratégias para atrair novos clientes.
+
+3. Automatizar tarefas repetitivas para ganhar tempo.
+
+4. Utilizar inteligência artificial para melhorar o atendimento.
+
+Próximo passo:
+Criar uma estratégia personalizada para esse negócio.
+`;
+
+
     res.json({
 
-        resposta:
-        "Recebi seu problema: " + problema
+        resposta: respostaIA
 
     });
 
 });
-
 
 app.listen(3000, function(){
 
