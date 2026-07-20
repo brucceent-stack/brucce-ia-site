@@ -1,18 +1,34 @@
-function analisarProblema(problema){
+const OpenAI = require("openai");
 
-    return `
-Análise da Brucce IA:
 
-Problema:
+const client = new OpenAI({
+
+    apiKey: process.env.OPENAI_API_KEY
+
+});
+
+
+async function analisarProblema(problema){
+
+    const resposta = await client.responses.create({
+
+        model: "gpt-4.1-mini",
+
+        input:
+        `
+Você é a Brucce IA, um consultor especializado em pequenos negócios.
+
+Analise este problema:
+
 ${problema}
 
-Sugestões:
+Dê sugestões práticas de melhoria.
+`
 
-- Melhorar presença digital.
-- Automatizar processos.
-- Criar estratégias para conquistar clientes.
+    });
 
-`;
+
+    return resposta.output_text;
 
 }
 

@@ -18,12 +18,12 @@ app.get("/", function(req, res){
 });
 
 
-app.post("/analise", function(req, res){
+app.post("/analise", async function(req, res){
 
     const problema = req.body.problema;
 
 
-    const respostaIA = analisarProblema(problema);
+    const respostaIA = await analisarProblema(problema);
 
 
 
