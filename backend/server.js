@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 
@@ -50,7 +52,11 @@ Criar uma estratégia personalizada para esse negócio.
     });
 
 });
+app.get("/teste", function(req,res){
 
+    res.send(process.env.CHAVE_TESTE);
+
+});
 app.listen(3000, function(){
 
     console.log("Servidor rodando na porta 3000");
