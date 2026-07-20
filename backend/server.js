@@ -20,18 +20,31 @@ app.get("/", function(req, res){
 
 app.post("/analise", async function(req, res){
 
-    const problema = req.body.problema;
+    try {
+
+        const problema = req.body.problema;
 
 
-    const respostaIA = await analisarProblema(problema);
+        const respostaIA = await analisarProblema(problema);
 
 
+        res.json({
 
-    res.json({
+            resposta: respostaIA
 
-        resposta: respostaIA
+        });
 
-    });
+
+    } catch(error){
+
+        res.json({
+
+            resposta:
+            "Ocorreu um erro ao analisar o problema."
+
+        });
+
+    }
 
 });
 
