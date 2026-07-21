@@ -24,9 +24,7 @@ app.post("/analise", async function(req, res){
 
         const problema = req.body.problema;
 
-
         const respostaIA = await analisarProblema(problema);
-
 
         res.json({
 
@@ -37,10 +35,11 @@ app.post("/analise", async function(req, res){
 
     } catch(error){
 
+        console.log(error);
+
         res.json({
 
-            resposta:
-            "Ocorreu um erro ao analisar o problema."
+            resposta: "Ocorreu um erro ao analisar o problema."
 
         });
 
@@ -48,6 +47,8 @@ app.post("/analise", async function(req, res){
 
 });
 
+
+    
 app.get("/teste", function(req,res){
 
     res.send(process.env.CHAVE_TESTE);

@@ -48,8 +48,33 @@ botaoAnalisar.addEventListener("click", function () {
         return;
     }
 
-    resposta.textContent =
-"Análise concluída:\n\n" +
+    fetch("http://localhost:3000/analise", {
+
+    method: "POST",
+
+    headers: {
+        "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+
+        problema: problema
+
+    })
+
+})
+
+.then(function(respostaServidor){
+
+    return respostaServidor.json();
+
+})
+
+.then(function(dados){
+
+    resposta.textContent = dados.resposta;
+
+});
 "1. Melhorar presença digital.\n" +
 "2. Criar automações para economizar tempo.\n" +
 "3. Usar estratégias de marketing para atrair clientes.";

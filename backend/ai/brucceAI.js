@@ -1,34 +1,32 @@
-const OpenAI = require("openai");
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 
-const client = new OpenAI({
-
-    apiKey: process.env.OPENAI_API_KEY
-
-});
+const genAI = new GoogleGenerativeAI(
+    process.env.GEMINI_API_KEY
+);
 
 
 async function analisarProblema(problema){
 
-    const resposta = await client.responses.create({
+    const model = genAI.getGenerativeModel({
+        model: "gemini-2.0-flash"
+    });
 
-        model: "gpt-4.1-mini",
 
-        input:
-        `
-Você é a Brucce IA, um consultor especializado em pequenos negócios.
+    const resultado = await model.generateContent(
+`
+Você é a Brucce IA, uma consultora especializada em pequenos negócios.
 
 Analise este problema:
 
 ${problema}
 
-Dê sugestões práticas de melhoria.
+Dê sugestões práticas, estratégias e próximos passos.
 `
+    );
 
-    });
 
-
-    return resposta.output_text;
+    return resultado.response.text();
 
 }
 

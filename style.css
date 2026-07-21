@@ -187,3 +187,41 @@ section {
     opacity: 0.8;
 
 }
+.processo{
+
+    padding: 60px 20px;
+    text-align: center;
+
+}
+
+
+.etapas{
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.etapa{
+
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 300px;
+
+}
+.etapa h3{
+
+    color: black;
+
+}
+
+
+.etapa p{
+
+    color: black;
+
+}
